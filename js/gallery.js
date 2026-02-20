@@ -1,6 +1,6 @@
 const images = [
     {
-        src: "gallery/photo1.jpg",
+        src: "assets/gallery/photo1.jpg",
         date: "撮影日: 2024年11月",
         location: {
             prefecture: "京都部",
@@ -8,7 +8,7 @@ const images = [
         }
     },
     {
-        src: "gallery/photo2.jpg",
+        src: "assets/gallery/photo2.jpg",
         date: "撮影日: 2024年03月",
         location: {
             prefecture: "静岡県",
@@ -16,7 +16,7 @@ const images = [
         }
     },
     {
-        src: "gallery/photo3.jpg",
+        src: "assets/gallery/photo3.jpg",
         date: "撮影日: 2024年03月",
         location: {
             prefecture: "長野県",
