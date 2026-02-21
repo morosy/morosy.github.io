@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formDataToSend.append('_subject', `新しいお問い合わせ: ${data.subject}`);
         formDataToSend.append('_captcha', 'false');
 
-        fetch('https://formsubmit.co/al23092@shibaura-it.ac.jp', {
+        fetch('https://formsubmit.co/morosy.dev@gmail.com', {
             method: 'POST',
             body: formDataToSend
         })
