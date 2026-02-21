@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>お問い合わせ</title>
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <h1 class="page-title">お問い合わせ</h1>
+            <p class="subtitle">ご質問やご相談はこちらのフォームからお願いします</p>
+            <p class="notice">※このフォームはFormSubmitを使用しています</p>
+
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label for="name">お名前 *</label>
+                    <input type="text" id="name" name="name" placeholder="山田太郎" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">メールアドレス *</label>
+                    <input type="email" id="email" name="email" placeholder="example@example.com" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone" placeholder="09012345678" />
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">件名 *</label>
+                    <input type="text" id="subject" name="subject" placeholder="例：お仕事のご依頼について" required />
+                </div>
+
+                <div class="form-group">
+                    <label for="message">メッセージ *</label>
+                    <textarea id="message" name="message" placeholder="ここにメッセージを入力してください..." rows="6" required></textarea>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="submit-btn">送信</button>
+                    <button type="reset" class="reset-btn">クリア</button>
+                </div>
+            </form>
+
+            <div id="form-message" class="form-message"></div>
+
+            <div id="submission-result" class="submission-result">
+                <h2 class="result-title">送信内容</h2>
+                <div class="result-content">
+                    <p><strong>お名前:</strong> <span id="result-name"></span></p>
+                    <p><strong>メールアドレス:</strong> <span id="result-email"></span></p>
+                    <p><strong>電話番号:</strong> <span id="result-phone"></span></p>
+                    <p><strong>件名:</strong> <span id="result-subject"></span></p>
+                    <p><strong>メッセージ:</strong></p>
+                    <p id="result-message" class="result-message-text"></p>
+                </div>
+                <button id="return-home-btn" class="return-home-btn">ホームへ戻る</button>
+            </div>
+        </div>
+
+        <div class="footer-buttons">
+            <button class="home-button" onclick="location.href='index.html'">ホームへ戻る</button>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 MOROZUMI Shunsuke. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>

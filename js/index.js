@@ -6,13 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
         moreContent.classList.toggle('visible');
         seeMoreBtn.textContent = moreContent.classList.contains('visible') ? '閉じる' : 'もっと見る';
     });
-
-    const contactBtn = document.getElementById('contact-btn');
-    const email = document.getElementById('email-address');
-
-    contactBtn.addEventListener('click', () => {
-        email.classList.toggle('visible');
-    });
 });
 
 function scrollToTop() {
