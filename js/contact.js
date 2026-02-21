@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     const formMessage = document.getElementById('form-message');
     const submissionResult = document.getElementById('submission-result');
-    const returnHomeBtn = document.getElementById('return-home-btn');
 
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -72,12 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 送信結果を表示
         submissionResult.classList.add('show');
-    }
-
-    if (returnHomeBtn) {
-        returnHomeBtn.addEventListener('click', () => {
-            location.href = 'index.html';
-        });
     }
 
     function showMessage(text, type) {
