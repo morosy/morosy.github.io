@@ -20,16 +20,31 @@
             </div>
 
             <div class="button-group">
-                <button class="action-button download-btn" onclick="alert('ダウンロード機能は準備中です')">ダウンロード</button>
+                <button class="action-button download-btn" id="download-open-btn">ダウンロード</button>
                 <button class="action-button privacy-btn" onclick="location.href='ytr-privacy.html'">プライバシーポリシー</button>
             </div>
         </div>
+        <!-- Download Modal -->
+        <div class="modal-overlay" id="download-modal" aria-hidden="true">
+            <div class="modal" role="dialog" aria-modal="true" aria-labelledby="download-modal-title">
+                <button class="modal-close" id="download-close-btn" aria-label="閉じる">×</button>
 
+                <div class="modal-inner">
+                    <div class="modal-title" id="download-modal-title">ダウンロード</div>
+
+                    <div class="modal-button-group">
+                        <button class="modal-action-button" id="download-chrome-btn">Chromeウェブストア</button>
+                        <button class="modal-action-button" id="download-github-btn">GitHub</button>
+                    </div>
+
+                    <div class="modal-note">※外部サイトへ移動します</div>
+                </div>
+            </div>
+        </div>
         <div class="footer-buttons">
             <button class="home-button" onclick="location.href='index.html'">ホームへ戻る</button>
             <button class="back-button" onclick="location.href='works.html'">戻る</button>
         </div>
-        
         <div class="footer">
             <p>&copy; 2025 MOROZUMI Shunsuke. All rights reserved.</p>
         </div>
