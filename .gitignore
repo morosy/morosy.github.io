@@ -3,7 +3,7 @@
 Thumbs.db
 
 # エディタ・IDE
-# .vscode/
+.vscode/
 
 # npm やビルド関連
 node_modules/
@@ -16,3 +16,6 @@ build/
 
 # バックアップファイル
 backup/
+
+# その他
+.idea/
