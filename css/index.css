@@ -69,11 +69,16 @@ html, body {
     color: #FF7B41;
 }
 
-.introduction, .hobbies, .skills, .career, .experience {
+.introduction, .environment, .hobbies, .skills, .career, .experience {
     width: 90%;
     max-width: 820px;
     margin: 0 auto 25px auto;
     text-align: center;
+}
+.environment-text {
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.6;
 }
 .intro-text {
     font-size: 0.95em;
@@ -276,4 +281,3 @@ html, body {
         font-size: 0.9em;
     }
 }
-
