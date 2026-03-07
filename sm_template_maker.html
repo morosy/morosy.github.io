@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StockManager ボード作成ツール</title>
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="stylesheet" href="css/sm_template_maker.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <h1 class="page-title">StockManager ボード作成ツール</h1>
+
+            <section class="form-section">
+                <label class="field-label" for="board-name">ボード名を入力</label>
+                <input id="board-name" class="text-input" type="text" maxlength="10" placeholder="ボード名を入力..." />
+                <p id="board-name-error" class="error-message" aria-live="polite"></p>
+            </section>
+
+            <section class="form-section">
+                <label class="field-label" for="board-items">以下に追加したい要素を入力</label>
+                <textarea id="board-items" class="text-area" rows="14" placeholder="例）&#10;砂糖&#10;塩&#10;酢"></textarea>
+                <p id="board-items-error" class="error-message" aria-live="polite"></p>
+            </section>
+
+            <p id="global-error" class="error-message global-error" aria-live="polite"></p>
+
+            <div class="button-row">
+                <button id="usage-button" class="action-button usage-button" type="button">使い方</button>
+                <button id="reset-button" class="action-button reset-button" type="button">リセット</button>
+                <button id="export-button" class="action-button export-button" type="button">ファイルを出力</button>
+            </div>
+        </div>
+
+        <div class="footer-buttons">
+            <button id="home-button" class="home-button" type="button">ホームに戻る</button>
+            <button id="back-button" class="back-button" type="button">戻る</button>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2025 MOROZUMI Shunsuke. All rights reserved.</p>
+        </div>
+    </div>
+
+    <div id="usage-overlay" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="usage-title">
+        <div class="overlay-card">
+            <h2 id="usage-title">使い方</h2>
+            <ol>
+                <li>ボード名を入力します（最大10文字）。</li>
+                <li>追加したい項目を1行ずつ入力します（最大500行、各行24文字まで）。</li>
+                <li>「ファイルを出力」を押すと、テンプレートJSONがダウンロードされます。</li>
+            </ol>
+            <button id="close-overlay-button" class="action-button close-overlay-button" type="button">閉じる</button>
+        </div>
+    </div>
+
+    <script src="js/sm_template_maker.js"></script>
+</body>
+</html>

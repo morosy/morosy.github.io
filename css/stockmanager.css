@@ -117,13 +117,32 @@ html, body {
     transform: translateY(-2px);
 }
 
+.template-create-btn {
+    background-color: #2d8fdd;
+}
+
+.template-create-btn:hover {
+    background-color: #2374b5;
+    transform: translateY(-2px);
+}
+
+.template-download-btn {
+    background-color: #6f6f6f;
+}
+
+.template-download-btn:hover {
+    background-color: #545454;
+    transform: translateY(-2px);
+}
+
 .footer-buttons {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin: 10px 0 5px 0;
+    margin-top: auto;
+    padding-bottom: 15px;
 }
 
 .back-button {
