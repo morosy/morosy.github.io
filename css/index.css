@@ -1,4 +1,4 @@
-* {
+﻿* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,25 +8,34 @@ html, body {
     height: 100%;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    overflow: hidden;
     overflow-x: hidden;
+}
+body.page-expanded {
+    overflow-y: auto;
 }
 
 .container {
     min-height: 100vh;
+    height: 100vh;
     width: 100vw;
     border: 12px solid #FF7B41;
     /* background-color: #fff; */
     background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
+body.page-expanded .container {
+    height: auto;
+    justify-content: flex-start;
+}
 
-/* 中央表示用のラッパー */
 .main-wrapper {
     width: 100%;
-    padding-top: 10vh; /* 上に少しスペース */
-    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 12px;
 }
 .main-content {
     display: flex;
@@ -38,9 +47,9 @@ html, body {
     margin: 0 auto;
 }
 
-/* 名前・アイコン */
+
 .name-block {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 .romaji {
     font-size: 0.9em;
@@ -51,7 +60,7 @@ html, body {
     font-weight: bold;
 }
 .icon-block {
-    margin-bottom: 30px;
+    margin-bottom: 16px;
 }
 .icon-img {
     width: 160px;
@@ -61,7 +70,6 @@ html, body {
     object-fit: cover;
 }
 
-/* セクション共通 */
 .section-title, .skills-title {
     font-size: 1.2em;
     font-weight: bold;
@@ -72,7 +80,7 @@ html, body {
 .introduction, .environment, .hobbies, .skills, .career, .experience {
     width: 90%;
     max-width: 820px;
-    margin: 0 auto 25px auto;
+    margin: 0 auto 16px auto;
     text-align: center;
 }
 .environment-text {
@@ -95,25 +103,31 @@ html, body {
     margin: 5px 0;
 }
 
-/* ボタン系 */
-.sns-buttons {
+/* Main nav buttons */
+.action-buttons {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 }
-.sns-button {
-    padding: 8px 15px;
+.nav-button {
+    padding: 6px 14px;
     background-color: #FF7B41;
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    font-size: 0.9em;
+    font-size: 0.88em;
+    font-weight: 600;
     transition: background-color 0.3s;
+    white-space: nowrap;
 }
-.sns-button:hover {
+.nav-button:hover {
     background-color: #E66A30;
+}
+.nav-button-contact {
+    background-color: #E66A30;
+    box-shadow: 0 4px 10px rgba(230, 106, 48, 0.35);
 }
 .see-more-button {
     padding: 10px 20px;
@@ -124,7 +138,7 @@ html, body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin: 20px 0;
+    margin: 12px 0;
 }
 .see-more-button:hover {
     background-color: #333;
@@ -148,7 +162,6 @@ html, body {
     background-color: #E66A30;
 }
 
-/* 表・資格・スキル */
 .skills-table, .content-table {
     width: 100%;
     border-collapse: collapse;
@@ -175,7 +188,6 @@ html, body {
     background-color: #fff;
 }
 
-/* 追加コンテンツの非表示制御 */
 #more-content {
     display: none;
     width: 100%;
@@ -188,10 +200,9 @@ html, body {
     text-align: center;
     font-size: 0.75em;
     color: #888;
-    margin-bottom: 20px; /* 枠との余白 */
+    margin-bottom: 20px;
 }
 
-/* 1列目の幅を固定 */
 .skills-table th:first-child,
 .content-table th:first-child,
 .skills-table td:first-child,
@@ -202,7 +213,6 @@ html, body {
     white-space: nowrap;
 }
 
-/* Skills アイコンセクション */
 .skills-icons {
     width: 90%;
     max-width: 820px;
@@ -216,35 +226,20 @@ html, body {
     flex-wrap: wrap;
     margin-top: 10px;
 }
+.skills-group {
+    margin-top: 14px;
+}
+.skills-group-title {
+    font-size: 0.95em;
+    font-weight: bold;
+    color: #444;
+}
 .skills-icon-row img {
-    width: 60px;
-    height: 60px;
+    width: 52px;
+    height: 52px;
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.contact-section {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.contact-button {
-    padding: 8px 15px;
-    background-color: #FF7B41;
-    /* background-color: #30ACE6; */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 0.9em;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
-}
-
-.contact-button:hover {
-    background-color: #E66A30;
-    /* background-color: #1E8CC3; */
 }
 
 .email-address {
@@ -261,7 +256,6 @@ html, body {
 
 
 
-/* レスポンシブ対応 */
 @media (max-width: 600px) {
     .name {
         font-size: 1.8em;
@@ -272,12 +266,20 @@ html, body {
     .skills-table, .content-table {
         font-size: 0.75em;
     }
-    .sns-button {
-        padding: 6px 12px;
-        font-size: 0.8em;
+    .action-buttons {
+        gap: 6px;
+    }
+    .nav-button {
+        padding: 5px 9px;
+        font-size: 0.78em;
+    }
+    .nav-button-contact {
+        box-shadow: 0 3px 7px rgba(230, 106, 48, 0.35);
     }
     .see-more-button {
         padding: 8px 16px;
         font-size: 0.9em;
     }
 }
+
+
