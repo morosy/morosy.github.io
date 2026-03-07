@@ -135,6 +135,15 @@ html, body {
     transform: translateY(-2px);
 }
 
+.privacy-btn {
+    background-color: #2f9e44;
+}
+
+.privacy-btn:hover {
+    background-color: #267d36;
+    transform: translateY(-2px);
+}
+
 .footer-buttons {
     display: flex;
     flex-direction: column;
