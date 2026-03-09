@@ -13,7 +13,7 @@ html, body {
 .container {
     min-height: 100vh;
     width: 100vw;
-    border: 12px solid #FF7B41;
+    border: 12px solid var(--theme-primary);
     background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@ html, body {
 .section-title {
     font-size: 1.8em;
     font-weight: bold;
-    color: #FF7B41;
+    color: var(--theme-primary);
     text-align: center;
     margin-bottom: 30px;
 }
@@ -55,7 +55,7 @@ html, body {
     aspect-ratio: 1 / 1;
     text-align: center;
     background-color: white;
-    border: 2px solid #FF7B41;
+    border: 2px solid var(--theme-primary);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
@@ -112,14 +112,14 @@ html, body {
 }
 
 .work-link:hover .work-title {
-    color: #FF7B41;
+    color: var(--theme-primary);
 }
 
 .more-button {
     display: block;
     margin: 20px auto 0 auto;
     padding: 10px 20px;
-    background-color: #FF7B41;
+    background-color: var(--theme-primary);
     color: white;
     border: none;
     border-radius: 5px;
@@ -139,7 +139,7 @@ html, body {
 .home-button {
     margin: 20px 0 10px 0;
     padding: 10px 20px;
-    background-color: #FF7B41;
+    background-color: var(--theme-primary);
     color: white;
     border: none;
     border-radius: 5px;
@@ -149,7 +149,7 @@ html, body {
 }
 
 .home-button:hover {
-    background-color: #E66A30;
+    background-color: var(--theme-primary-dark);
 }
 
 .footer {

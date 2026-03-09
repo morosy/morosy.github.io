@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StockManager</title>
     <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="stylesheet" href="css/theme.css" />
     <link rel="stylesheet" href="css/stockmanager.css" />
 </head>
 <body>
@@ -51,6 +52,19 @@
         </div>
     </div>
 
+    <div class="template-overlay hidden" id="template-overlay">
+        <div class="template-overlay-card" role="dialog" aria-modal="true" aria-labelledby="template-overlay-title">
+            <h2 id="template-overlay-title">テンプレートを選択</h2>
+            <p class="template-overlay-text">ダウンロードするテンプレートを選んでください。</p>
+            <div class="template-overlay-actions">
+                <button class="template-option-button" type="button" data-template-file="assets/stockmanager_template/調味料.json" data-template-name="調味料.json">調味料</button>
+                <button class="template-option-button" type="button" data-template-file="assets/stockmanager_template/日用品.json" data-template-name="日用品.json">日用品</button>
+            </div>
+            <button class="template-overlay-close-button" id="template-overlay-close-button" type="button">閉じる</button>
+        </div>
+    </div>
+
+    <script src="js/theme.js"></script>
     <script src="js/stockmanager.js"></script>
 </body>
 </html>

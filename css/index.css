@@ -19,7 +19,7 @@ body.page-expanded {
     min-height: 100vh;
     height: 100vh;
     width: 100vw;
-    border: 12px solid #FF7B41;
+    border: 12px solid var(--theme-primary);
     /* background-color: #fff; */
     background-color: #f5f5f5;
     display: flex;
@@ -74,7 +74,7 @@ body.page-expanded .container {
     font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 10px;
-    color: #FF7B41;
+    color: var(--theme-primary);
 }
 
 .introduction, .environment, .hobbies, .skills, .career, .experience {
@@ -113,7 +113,7 @@ body.page-expanded .container {
 }
 .nav-button {
     padding: 6px 14px;
-    background-color: #FF7B41;
+    background-color: var(--theme-primary);
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -123,11 +123,11 @@ body.page-expanded .container {
     white-space: nowrap;
 }
 .nav-button:hover {
-    background-color: #E66A30;
+    background-color: var(--theme-primary-dark);
 }
 .nav-button-contact {
-    background-color: #E66A30;
-    box-shadow: 0 4px 10px rgba(230, 106, 48, 0.35);
+    background-color: var(--theme-primary-dark);
+    box-shadow: 0 4px 10px var(--theme-primary-shadow);
 }
 .see-more-button {
     padding: 10px 20px;
@@ -151,7 +151,7 @@ body.page-expanded .container {
 .back-to-top-button {
     padding: 10px 20px;
     font-size: 0.95em;
-    background-color: #FF7B41;
+    background-color: var(--theme-primary);
     color: white;
     border: none;
     border-radius: 5px;
@@ -159,7 +159,7 @@ body.page-expanded .container {
     transition: background-color 0.3s;
 }
 .back-to-top-button:hover {
-    background-color: #E66A30;
+    background-color: var(--theme-primary-dark);
 }
 
 .skills-table, .content-table {
