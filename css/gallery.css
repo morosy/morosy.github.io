@@ -10,7 +10,7 @@ html, body {
 .container {
     height: 100vh;
     width: 100vw;
-    border: 12px solid #FF7B41;
+    border: 12px solid var(--theme-primary);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -52,7 +52,7 @@ html, body {
     font-size: 2.5em;
     background: none;
     border: none;
-    color: #FF7B41;
+    color: var(--theme-primary);
     cursor: pointer;
     padding: 20px;
     transition: color 0.2s;
@@ -76,7 +76,7 @@ html, body {
 .home-button {
     margin: 10px 0;
     padding: 10px 20px;
-    background-color: #FF7B41;
+    background-color: var(--theme-primary);
     color: white;
     border: none;
     border-radius: 5px;
@@ -86,7 +86,7 @@ html, body {
 }
 
 .home-button:hover {
-    background-color: #E66A30;
+    background-color: var(--theme-primary-dark);
 }
 
 .footer {
@@ -156,19 +156,19 @@ html, body {
 #date {
     font-size: 1.2em;
     font-weight: bold;
-    color: #FF7B41;
+    color: var(--theme-primary);
 }
 
 #location {
     font-size: 1.2m;
     font-weight: bold;
-    color: #FF7B41;
+    color: var(--theme-primary);
     text-align: center;
 }
 
 #location a {
     font-size: 1.2em;
-    color: #FF7B41;
+    color: var(--theme-primary);
     text-decoration: underline;
     font-weight: bold;
 }
