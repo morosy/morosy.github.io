@@ -90,10 +90,17 @@ html, body {
 
 .button-group {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 15px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
 .action-button {
@@ -106,42 +113,38 @@ html, body {
     font-weight: bold;
     color: white;
     text-decoration: none;
-}
-
-.download-btn {
     background-color: #FF7B41;
 }
 
-.download-btn:hover {
+.action-button:hover {
     background-color: #E66A30;
     transform: translateY(-2px);
 }
 
-.template-create-btn {
-    background-color: #2d8fdd;
+.download-btn {
+    padding: 14px 30px;
+    font-size: 1em;
 }
 
-.template-create-btn:hover {
-    background-color: #2374b5;
-    transform: translateY(-2px);
-}
-
+.template-create-btn,
 .template-download-btn {
-    background-color: #6f6f6f;
+    width: 235px;
+    text-align: center;
+    background-color: #2D8FDD;
 }
 
+.template-create-btn:hover,
 .template-download-btn:hover {
-    background-color: #545454;
-    transform: translateY(-2px);
+    background-color: #2374B5;
 }
 
 .privacy-btn {
-    background-color: #2f9e44;
+    background-color: #6F6F6F;
+    color: #FFFFFF;
 }
 
 .privacy-btn:hover {
-    background-color: #267d36;
-    transform: translateY(-2px);
+    background-color: #545454;
 }
 
 .footer-buttons {
