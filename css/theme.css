@@ -1,0 +1,124 @@
+﻿:root {
+    --theme-primary: #888;
+    --theme-primary-dark: #666;
+    --theme-primary-soft: #aaa;
+    --theme-primary-pale: #ddd;
+    --theme-primary-shadow: rgba(136, 136, 136, 0.35);
+}
+
+:root[data-theme="orange"] {
+    --theme-primary: #FF7B41;
+    --theme-primary-dark: #E66A30;
+    --theme-primary-soft: #FFA780;
+    --theme-primary-pale: #FFD3BF;
+    --theme-primary-shadow: rgba(230, 106, 48, 0.35);
+}
+
+:root[data-theme="purple"] {
+    --theme-primary: #8B5CF6;
+    --theme-primary-dark: #7C3AED;
+    --theme-primary-soft: #B79BFA;
+    --theme-primary-pale: #E4DBFF;
+    --theme-primary-shadow: rgba(124, 58, 237, 0.35);
+}
+
+.style-switcher {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+}
+
+.style-button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--theme-primary);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.style-button:hover {
+    background-color: var(--theme-primary-dark);
+    transform: translateY(-1px);
+}
+
+.style-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    z-index: 1300;
+}
+
+.style-overlay.hidden {
+    display: none;
+}
+
+.style-overlay-card {
+    width: min(360px, 92vw);
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.style-option-row {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+}
+
+.style-option-button,
+.style-overlay-close {
+    border: none;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.style-option-button {
+    min-width: 120px;
+    background-color: var(--theme-primary);
+}
+
+.style-option-button[data-theme="orange"] {
+    background-color: #FF7B41;
+}
+
+.style-option-button[data-theme="purple"] {
+    background-color: #8B5CF6;
+}
+
+.style-option-button[data-theme="orange"]:hover,
+.style-option-button[data-theme="orange"].active {
+    background-color: #E66A30;
+}
+
+.style-option-button[data-theme="purple"]:hover,
+.style-option-button[data-theme="purple"].active {
+    background-color: #7C3AED;
+}
+
+.style-overlay-close {
+    width: 100%;
+    background-color: #6f6f6f;
+}
+
+.style-overlay-close:hover {
+    background-color: #545454;
+    transform: translateY(-1px);
+}

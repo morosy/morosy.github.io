@@ -10,7 +10,7 @@ html, body {
 .container {
     min-height: 100vh;
     width: 100vw;
-    border: 12px solid #FF7B41; /* オレンジの枠 */
+    border: 12px solid var(--theme-primary); /* オレンジの枠 */
     box-sizing: border-box; /* ← これが重要！ border込みでサイズ制御 */
     display: flex;
     flex-direction: column;
@@ -38,14 +38,14 @@ html, body {
     justify-content: center;
     border-radius: 15px;
     background-color: white;
-    border: 2px solid #FF7B41;
+    border: 2px solid var(--theme-primary);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.2s, background-color 0.2s;
 }
 
 .sns-icon-grid a:hover {
     transform: scale(1.1);
-    background-color: #FFE5D9;
+    background-color: var(--theme-primary-pale);
 }
 
 .sns-icon-grid img {
@@ -57,7 +57,7 @@ html, body {
 .home-button {
     margin: 20px 0;
     padding: 10px 20px;
-    background-color: #FF7B41;
+    background-color: var(--theme-primary);
     color: white;
     border: none;
     border-radius: 5px;
@@ -67,7 +67,7 @@ html, body {
 }
 
 .home-button:hover {
-    background-color: #E66A30;
+    background-color: var(--theme-primary-dark);
 }
 
 .footer {
