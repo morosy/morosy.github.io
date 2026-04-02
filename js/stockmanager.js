@@ -1,4 +1,7 @@
-document.addEventListener('DOMContentLoaded', function() {
+Ôªødocument.addEventListener('DOMContentLoaded', function() {
+    var apkDownloadPath = 'release/StockManager-1.0.0.apk';
+    var googlePlayUrl = 'https://play.google.com/store/apps/details?id=com.morosy.stockmanager';
+
     fetch('texts/explain/StockManager.txt')
         .then(function(response) {
             return response.text();
@@ -8,26 +11,56 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(function(error) {
             console.error('Error loading description:', error);
-            document.getElementById('description-text').textContent = 'StockManagerÇÃê‡ñæÇì«Ç›çûÇﬂÇ‹ÇπÇÒÇ≈ÇµÇΩÅB';
+            document.getElementById('description-text').textContent = 'StockManager„ÅÆË™¨Êòé„ÇíË™≠„ÅøËæº„ÇÅ„Åæ„Åõ„Çì„Åß„Åó„Åü„ÄÇ';
         });
 
+    var downloadBtn = document.getElementById('download-btn');
+    var downloadOverlay = document.getElementById('download-overlay');
+    var downloadOverlayCloseButton = document.getElementById('download-overlay-close-button');
+    var apkDownloadButton = document.getElementById('apk-download-button');
+    var googlePlayButton = document.getElementById('google-play-button');
     var templateDownloadBtn = document.getElementById('template-download-btn');
     var templateOverlay = document.getElementById('template-overlay');
     var templateOverlayCloseButton = document.getElementById('template-overlay-close-button');
     var templateOptionButtons = document.querySelectorAll('.template-option-button');
 
-    function closeTemplateOverlay() {
-        if (!templateOverlay) {
+    function closeOverlay(overlay) {
+        if (!overlay) {
             return;
         }
-        templateOverlay.classList.add('hidden');
+        overlay.classList.add('hidden');
+    }
+
+    function openOverlay(overlay) {
+        if (!overlay) {
+            return;
+        }
+        overlay.classList.remove('hidden');
+    }
+
+    function triggerFileDownload(filePath, fileName) {
+        var link = document.createElement('a');
+        link.href = filePath;
+        link.download = fileName;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    function closeTemplateOverlay() {
+        closeOverlay(templateOverlay);
     }
 
     function openTemplateOverlay() {
-        if (!templateOverlay) {
-            return;
-        }
-        templateOverlay.classList.remove('hidden');
+        openOverlay(templateOverlay);
+    }
+
+    function closeDownloadOverlay() {
+        closeOverlay(downloadOverlay);
+    }
+
+    function openDownloadOverlay() {
+        openOverlay(downloadOverlay);
     }
 
     function downloadTemplateFile(filePath, fileName) {
@@ -50,8 +83,30 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(function(error) {
                 console.error('Error downloading template:', error);
-                alert('ÉeÉìÉvÉåÅ[ÉgÇÃÉ_ÉEÉìÉçÅ[ÉhÇ…é∏îsÇµÇ‹ÇµÇΩÅB');
+                alert('„ÉÜ„É≥„Éó„É¨„Éº„Éà„ÅÆ„ÉÄ„Ç¶„É≥„É≠„Éº„Éâ„Å´Â§±Êïó„Åó„Åæ„Åó„Åü„ÄÇ');
             });
+    }
+
+    if (downloadBtn && downloadOverlay) {
+        downloadBtn.addEventListener('click', openDownloadOverlay);
+    }
+
+    if (downloadOverlayCloseButton) {
+        downloadOverlayCloseButton.addEventListener('click', closeDownloadOverlay);
+    }
+
+    if (apkDownloadButton) {
+        apkDownloadButton.addEventListener('click', function() {
+            closeDownloadOverlay();
+            triggerFileDownload(apkDownloadPath, 'StockManager-1.0.0.apk');
+        });
+    }
+
+    if (googlePlayButton) {
+        googlePlayButton.addEventListener('click', function() {
+            closeDownloadOverlay();
+            window.location.href = googlePlayUrl;
+        });
     }
 
     if (templateDownloadBtn && templateOverlay) {
@@ -77,11 +132,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeTemplateOverlay();
             }
         });
+    }
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && !templateOverlay.classList.contains('hidden')) {
-                closeTemplateOverlay();
+    if (downloadOverlay) {
+        downloadOverlay.addEventListener('click', function(event) {
+            if (event.target === downloadOverlay) {
+                closeDownloadOverlay();
             }
         });
     }
+
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            if (downloadOverlay && !downloadOverlay.classList.contains('hidden')) {
+                closeDownloadOverlay();
+            }
+            if (templateOverlay && !templateOverlay.classList.contains('hidden')) {
+                closeTemplateOverlay();
+            }
+        }
+    });
 });

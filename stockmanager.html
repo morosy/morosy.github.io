@@ -30,7 +30,7 @@
 
             <div class="button-group">
                 <div class="button-row">
-                    <a class="action-button download-btn" href="release/StockManager-1.0.0.apk" download>ダウンロード</a>
+                    <button class="action-button download-btn" id="download-btn" type="button">ダウンロード</button>
                 </div>
                 <div class="button-row">
                     <a class="action-button template-create-btn" href="sm_template_maker.html">テンプレート作成</a>
@@ -60,6 +60,18 @@
                 <button class="template-option-button" type="button" data-template-file="assets/stockmanager_template/日用品.json" data-template-name="日用品.json">日用品</button>
             </div>
             <button class="template-overlay-close-button" id="template-overlay-close-button" type="button">閉じる</button>
+        </div>
+    </div>
+
+    <div class="download-overlay hidden" id="download-overlay">
+        <div class="download-overlay-card" role="dialog" aria-modal="true" aria-labelledby="download-overlay-title">
+            <h2 id="download-overlay-title">ダウンロード方法を選択</h2>
+            <p class="download-overlay-text">利用するダウンロード先を選んでください。</p>
+            <div class="download-overlay-actions">
+                <button class="download-option-button" id="apk-download-button" type="button">apkダウンロード</button>
+                <button class="download-option-button google-play-button" id="google-play-button" type="button">GooglePlay</button>
+            </div>
+            <button class="download-overlay-close-button" id="download-overlay-close-button" type="button">閉じる</button>
         </div>
     </div>
 

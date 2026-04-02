@@ -195,7 +195,8 @@ html, body {
     padding-bottom: 5px;
 }
 
-.template-overlay {
+.template-overlay,
+.download-overlay {
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.35);
@@ -206,11 +207,13 @@ html, body {
     z-index: 1000;
 }
 
-.template-overlay.hidden {
+.template-overlay.hidden,
+.download-overlay.hidden {
     display: none;
 }
 
-.template-overlay-card {
+.template-overlay-card,
+.download-overlay-card {
     width: min(420px, 92vw);
     background-color: #fff;
     border-radius: 10px;
@@ -221,17 +224,20 @@ html, body {
     gap: 12px;
 }
 
-.template-overlay-card h2 {
+.template-overlay-card h2,
+.download-overlay-card h2 {
     color: #FF7B41;
     text-align: center;
 }
 
-.template-overlay-text {
+.template-overlay-text,
+.download-overlay-text {
     color: #333;
     text-align: center;
 }
 
-.template-overlay-actions {
+.template-overlay-actions,
+.download-overlay-actions {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -239,7 +245,9 @@ html, body {
 }
 
 .template-option-button,
-.template-overlay-close-button {
+.template-overlay-close-button,
+.download-option-button,
+.download-overlay-close-button {
     padding: 10px 18px;
     border: none;
     border-radius: 6px;
@@ -254,17 +262,37 @@ html, body {
     background-color: #2D8FDD;
 }
 
+.download-option-button {
+    min-width: 140px;
+    background-color: #FF7B41;
+}
+
 .template-option-button:hover {
     background-color: #2374B5;
     transform: translateY(-1px);
 }
 
-.template-overlay-close-button {
+.download-option-button:hover {
+    background-color: #E66A30;
+    transform: translateY(-1px);
+}
+
+.google-play-button {
+    background-color: #2D8FDD;
+}
+
+.google-play-button:hover {
+    background-color: #2374B5;
+}
+
+.template-overlay-close-button,
+.download-overlay-close-button {
     align-self: center;
     background-color: #6F6F6F;
 }
 
-.template-overlay-close-button:hover {
+.template-overlay-close-button:hover,
+.download-overlay-close-button:hover {
     background-color: #545454;
     transform: translateY(-1px);
 }
